@@ -13,7 +13,7 @@ data_temp_sep <- separate(data,col=Temp_min_max, into=c("Temp_min", "Temp_max"),
 data_temp_sep%>%
   filter(Temp_min!="-") %>% # to remove rows with - in this Col
   filter(Temp_max!="-") %>% # to remove rows with - in this Col
-  mutate(Temp_max=as.numeric(Temp_max))   
+  #mutate(Temp_max=as.numeric(Temp_max))   
   filter(Rainfall!="-") %>% #to remove rows with - is this Col
   group_by(Station_number) %>% # group by station
   summarise(Day=n()) %>% #counts the number of days for each station
