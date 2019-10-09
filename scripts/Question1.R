@@ -136,7 +136,7 @@ avg_rainfall_plot_facet<-ggplot(data=avg_rainfall,
   geom_line()+ # produces a line plot using the avg_rainfall dataframe where x is month, y is avg_rainfall, group by station number (line for each station) and colour by state assigns to avg_rainfall_plot_facet
   facet_wrap(~state)+ #uses the facet wrap function to give a new plot for each state.
   labs(title="Average Monthly Rainfall by Station",x="Month", y="Average Rainfall",colour="State",caption="Data source:BOM")+ #labels the axis correctly and adds tittle and caption. 
-  #use theme to remove the grid/ background
+  theme(panel.grid.major.x = element_blank())#use theme to remove the x axis grid lines
   ggsave("figures/Q4_avg_rainfall_facet.png",plot=avg_rainfall_plot_facet) #saves avg_rainfall_plot_facet to a png file
 
   
